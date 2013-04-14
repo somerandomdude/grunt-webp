@@ -1,0 +1,46 @@
+{
+  "name": "grunt-webp",
+  "description": "Convert images to WebP format.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/somerandomdude/grunt-webp",
+  "author": {
+    "name": "P.J. Onori",
+    "email": "pj@somerandomdude.com",
+    "url": "http://somerandomdude.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/somerandomdude/grunt-webp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/somerandomdude/grunt-webp/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/somerandomdude/grunt-webp/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "grunt-lib-contrib": "~0.6.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin",
+    "grunt.js",
+    "webp"
+  ]
+}
