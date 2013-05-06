@@ -1,9 +1,10 @@
 /*
  * grunt-webp
  * http://github.com/somerandomdude/grunt-webp
+ * http://somerandomdude.com
  *
  * Copyright 2013 P.J. Onori
- * Licensed under the MIT license.
+ * MIT license.
  */
 
 'use strict';

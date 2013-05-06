@@ -1,10 +1,10 @@
 /*
- * grunt-csso
- * http://github.com/t32k/grunt-csso
- * http://en.t32k.me
+ * grunt-webp
+ * http://github.com/somerandomdude/grunt-webp
+ * http://somerandomdude.com
  *
- * Copyright (c) 2013 Koji Ishimoto
- * Licensed under the MIT license.
+ * Copyright (c) 2013 P.J. Onori
+ * MIT license.
  */
 
 
@@ -76,11 +76,9 @@ module.exports = function(grunt) {
      * Retrieves defined options.
      */
     var options = this.options();
-    //var files = grunt.file.expandMapping(this.files);
     grunt.verbose.writeflags(options, 'Options');
 
     var done = this.async();
-    grunt.log.subhead(this.fileDest);
 
     this.files.forEach(function(file) {
       var dest = path.normalize(file.dest + '/');
@@ -89,10 +87,7 @@ module.exports = function(grunt) {
 
     grunt.util.async.forEachSeries(file.src, function(f, next) {
 
-
-
       var args = [];
-      //grunt.log.subhead(String(f));
       /**
        * Preset setting, one of:
                     default, photo, picture,
@@ -280,24 +275,17 @@ module.exports = function(grunt) {
         args.push('-v');
       }
 
-      var fileExtname = path.extname(f);
-      var outputFilename = path.basename(f, '.png');
-      outputFilename = path.basename(outputFilename, '.jpg');
-      outputFilename = path.basename(outputFilename, '.jpeg');
       args.push(f);
       args.push('-o');
-      args.push(file.dest + outputFilename+'.webp');
+      var ext = path.extname(f);
+      var outputDest = path.join(file.dest, path.basename(f, ext) +'.webp');
+      args.push(outputDest);
 
       /**
        * Outputs the file that is being analysed.
        */
-      grunt.verbose.writeln('cwebp ' + args.join(' ') + ' ' + f + ' -o ' + file.dest + outputFilename+'.webp');
+      grunt.log.writeln('cwebp ' + args.join(' ') );
 
-
-
-      /**
-       * Executes the csscss command.
-       */
       var child = grunt.util.spawn({
         cmd: 'cwebp',
         args: args
