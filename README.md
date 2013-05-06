@@ -11,6 +11,8 @@ To install this plugin, open up the terminal, `cd` to your project's root direct
 npm install grunt-webp --save-dev
 ```
 
+This plugin depends on WebP's `cwebp` encoder. You'll need to install the (WebP Package)[https://developers.google.com/speed/webp/download]
+
 In your `Gruntfile.js` file add the following line:
 
 ```js
