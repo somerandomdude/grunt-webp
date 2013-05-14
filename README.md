@@ -40,7 +40,7 @@ This plugin requires Grunt `~0.4.0`
 * __multiThreading (boolean)__ Use multi-threading if available. 
 * __lowMemory (boolean)__ Reduce memory usage (slower encoding). 
 * __alphaMethod (string)__ Transparency-compression method (0..1). 
-* __alphaFilter Predictive filtering for alpha plane. One of: _none_, _fast_ (default) or _best_. 
+* __alphaFilter (string)__ Predictive filtering for alpha plane. One of: _none_, _fast_ (default) or _best_. 
 * __alphaCleanup (boolean)__ Clean RGB values in transparent area. 
 * __noAlpha (boolean)__ Discard any transparency information. 
 * __lossless (boolean)__  Encode image losslessly.
