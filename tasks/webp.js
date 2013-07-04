@@ -79,6 +79,11 @@ module.exports = function(grunt) {
     grunt.verbose.writeflags(options, 'Options');
 
     var done = this.async();
+    
+    var cwebp = 'cwebp';
+    if (options.binpath) {
+      cwebp = options.binpath;
+    }
 
     this.files.forEach(function(file) {
       var dest = path.normalize(file.dest + '/');
@@ -284,10 +289,10 @@ module.exports = function(grunt) {
       /**
        * Outputs the file that is being analysed.
        */
-      grunt.log.writeln('cwebp ' + args.join(' ') );
+      grunt.log.writeln(cwebp + ' ' + args.join(' ') );
 
       var child = grunt.util.spawn({
-        cmd: 'cwebp',
+        cmd: cwebp,
         args: args
       }, function(error, result, code) {
         grunt.log.writeln(code+''+result);
