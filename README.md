@@ -23,6 +23,7 @@ This plugin requires Grunt `~0.4.0`
 
 ### Settings 
 
+* __binpath (string)__ Location of the cwebp executable, default 'cwebp'. Use forward slashes as directory separator.
 * __quality (float)__ Quality factor (0:small..100:big).
 * __alphaQuality (integer)__ Transparency-compression quality (0..100)
 * __preset (string)__ Preset setting, one of: _default_, _photo_, _picture_, _drawing_, _icon_, _text_
