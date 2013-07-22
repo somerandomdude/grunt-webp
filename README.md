@@ -60,9 +60,9 @@ module.exports = function(grunt) {
       assets : {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>/assets/500x716',
+          cwd: 'path/to/source/images',
           src: '{,**/}*.png',
-          dest: '<%= yeoman.app %>/assets/500x716-webp/'
+          dest: 'output/path/'
         }]
       },
       options: {
