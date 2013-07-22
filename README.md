@@ -11,7 +11,7 @@ To install this plugin, open up the terminal, `cd` to your project's root direct
 npm install grunt-webp --save-dev
 ```
 
-This plugin depends on WebP's `cwebp` encoder. You'll need to install the [WebP Package](https://developers.google.com/speed/webp/download)
+This plugin depends on WebP's `cwebp` encoder. You'll need to install the [WebP Package](https://developers.google.com/speed/webp/download) or use [webp-bin](https://github.com/yuanyan/node-webp-bin)
 
 In your `Gruntfile.js` file add the following line:
 
@@ -57,8 +57,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
 	// WebP configuration
     webp: {
-      files: ['path/to/*.jpg', 'path/to/*.png'],
+      files: {
+        expand: true,
+        cwd: 'path/to/source/images',
+        src: '{,**/}*.png',
+        dest: 'output/path/'
+      },
       options: {
+        binpath: require('webp-bin').path,
         preset: 'photo',
         verbose: true,
         quality: 80,
