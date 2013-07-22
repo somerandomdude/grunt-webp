@@ -86,8 +86,9 @@ module.exports = function(grunt) {
 
     // Iterate over all src-dest file pairs.
     grunt.util.async.forEachSeries(this.files, function(f, next) {
+      f.dest = f.dest.replace(path.extname(f.dest), '.webp');
       console.log('file', f.src[0], f.dest);
-      grunt.file.mkdir(require('path').dirname(f.dest));
+      grunt.file.mkdir(path.dirname(f.dest));
 
       var args = [];
       /**
