@@ -57,13 +57,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
 	// WebP configuration
     webp: {
-      assets : {
-        files: [{
-          expand: true,
-          cwd: 'path/to/source/images',
-          src: '{,**/}*.png',
-          dest: 'output/path/'
-        }]
+      files: {
+        expand: true,
+        cwd: 'path/to/source/images',
+        src: '{,**/}*.png',
+        dest: 'output/path/'
       },
       options: {
         binpath: require('webp-bin').path,
