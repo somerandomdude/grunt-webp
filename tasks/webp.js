@@ -77,20 +77,17 @@ module.exports = function(grunt) {
      */
     var options = this.options();
     grunt.verbose.writeflags(options, 'Options');
-
-    var done = this.async();
     
     var cwebp = 'cwebp';
     if (options.binpath) {
       cwebp = options.binpath;
     }
 
-    this.files.forEach(function(file) {
-      var dest = path.normalize(file.dest + '/');
-      // Make the dest dir if it doesn't exist
-      grunt.file.mkdir(dest);
 
-    grunt.util.async.forEachSeries(file.src, function(f, next) {
+    // Iterate over all src-dest file pairs.
+    grunt.util.async.forEachSeries(this.files, function(f, next) {
+      console.log('file', f.src[0], f.dest);
+      grunt.file.mkdir(require('path').dirname(f.dest));
 
       var args = [];
       /**
@@ -280,11 +277,9 @@ module.exports = function(grunt) {
         args.push('-v');
       }
 
-      args.push(f);
+      args.push(f.src);
       args.push('-o');
-      var ext = path.extname(f);
-      var outputDest = path.join(file.dest, path.basename(f, ext) +'.webp');
-      args.push(outputDest);
+      args.push(f.dest);
 
       /**
        * Outputs the file that is being analysed.
@@ -308,8 +303,7 @@ module.exports = function(grunt) {
        */
       child.stdout.pipe(process.stdout);
       child.stderr.pipe(process.stderr);
-    }, done);
+    }.bind(this), this.async());
 
   });
-});
 };
