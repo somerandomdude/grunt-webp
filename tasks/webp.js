@@ -79,16 +79,12 @@ module.exports = function(grunt) {
     grunt.verbose.writeflags(options, 'Options');
 
     var done = this.async();
-    
     var cwebp = 'cwebp';
     if (options.binpath) {
       cwebp = options.binpath;
     }
 
     this.files.forEach(function(file) {
-      var dest = path.normalize(file.dest + '/');
-      // Make the dest dir if it doesn't exist
-      grunt.file.mkdir(dest);
 
     grunt.util.async.forEachSeries(file.src, function(f, next) {
 
@@ -283,7 +279,7 @@ module.exports = function(grunt) {
       args.push(f);
       args.push('-o');
       var ext = path.extname(f);
-      var outputDest = path.join(file.dest, path.basename(f, ext) +'.webp');
+      var outputDest = path.join(path.dirname(f), path.basename(f, ext) +'.webp');
       args.push(outputDest);
 
       /**
