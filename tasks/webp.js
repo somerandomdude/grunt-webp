@@ -77,13 +77,12 @@ module.exports = function(grunt) {
      */
     var options = this.options();
     grunt.verbose.writeflags(options, 'Options');
-
-    var done = this.async();
-
+    
     var cwebp = 'cwebp';
     if (options.binpath) {
       cwebp = options.binpath;
     }
+
 
     // Iterate over all src-dest file pairs.
     grunt.util.async.forEachSeries(this.files, function(f, next) {
