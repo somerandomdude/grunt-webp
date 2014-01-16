@@ -58,9 +58,9 @@ module.exports = function(grunt) {
 	// WebP configuration
     webp: {
       files: {
-        expand: true,
-        cwd: 'path/to/source/images',
-        src: '{,**/}*.png',
+        //expand: true,
+        //cwd: 'path/to/source/images',
+        src: 'source/*.png',
         dest: 'output/path/'
       },
       options: {
