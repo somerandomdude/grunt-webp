@@ -50,7 +50,7 @@ This plugin requires Grunt `~0.4.0`
 ## Example
 
 
-```
+```js
 module.exports = function(grunt) {
 
   
