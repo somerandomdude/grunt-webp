@@ -71,6 +71,7 @@ Experimental Options:
 
 module.exports = function(grunt) {
   var path = require('path');
+  var async = require('async');
   grunt.registerMultiTask('webp', 'WebP image format converter.', function() {
     /**
      * Retrieves defined options.
@@ -86,7 +87,7 @@ module.exports = function(grunt) {
     }
 
     // Iterate over all src-dest file pairs.
-    grunt.util.async.forEachSeries(this.files, function(f, next) {
+    async.eachSeries(this.files, function(f, next) {
       
       /**
        * Create folder for the dest file
