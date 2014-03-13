@@ -29,7 +29,6 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "grunt-lib-contrib": "~0.6.1",
     "async": "~0.2.10"
   },
   "devDependencies": {
