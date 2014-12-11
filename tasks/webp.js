@@ -277,6 +277,14 @@ module.exports = function(grunt) {
       }
 
       /**
+       * Image metadata to copy from input to output
+       */
+      if (options.metadata) {
+        args.push('-metadata');
+        args.push(options.metadata);
+      }
+
+      /**
        * Outputs the rules that have been matched.
        */
       if (options.verbose) {

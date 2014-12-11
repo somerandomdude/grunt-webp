@@ -45,7 +45,7 @@ This plugin requires Grunt `~0.4.0`
 * __alphaCleanup (boolean)__ Clean RGB values in transparent area. 
 * __noAlpha (boolean)__ Discard any transparency information. 
 * __lossless (boolean)__  Encode image losslessly.
-
+* __metadata (string)__ Image metadata to copy from input to output
 
 ## Example
 
@@ -84,7 +84,8 @@ module.exports = function(grunt) {
         alphaFilter: 'best',
         alphaCleanup: true,
         noAlpha: false,
-        lossless: false
+        lossless: false,
+        metadata: "all"
       }
     }
 
