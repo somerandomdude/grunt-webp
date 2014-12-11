@@ -42,7 +42,8 @@ module.exports = function(grunt) {
         alphaFilter: 'best',
         alphaCleanup: true,
         noAlpha: false,
-        lossless: false
+        lossless: false,
+        metadata: 'all'
       }
     }
 
